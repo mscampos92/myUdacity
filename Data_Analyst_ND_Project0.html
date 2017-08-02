@@ -1,4 +1,11 @@
-/*!
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>Data_Analyst_ND_Project0</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<style type="text/css">
+    /*!
 *
 * Twitter Bootstrap
 *
@@ -8687,10 +8694,6 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
-div.traceback-wrapper pre.traceback {
-  max-height: 600px;
-  overflow: auto;
-}
 /**
  * Primary styles
  *
@@ -8751,6 +8754,9 @@ body > #header .header-bar {
   #ipython_notebook {
     margin-left: 10px;
   }
+}
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
 }
 #noscript {
   width: auto;
@@ -8902,9 +8908,6 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
-.modal-header {
-  cursor: move;
-}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -8957,8 +8960,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8981,6 +8990,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9062,10 +9081,6 @@ ul.breadcrumb span {
   line-height: 22px;
   vertical-align: baseline;
 }
-.item_modified {
-  margin-right: 7px;
-  margin-left: 7px;
-}
 .item_buttons {
   line-height: 1em;
   margin-left: -5px;
@@ -9118,12 +9133,11 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
-.sort_button {
-  display: inline-block;
-  padding-left: 7px;
-}
 #tree-selector {
   padding-right: 0px;
+}
+[dir="rtl"] #tree-selector a {
+  float: right;
 }
 #button-select-all {
   min-width: 50px;
@@ -9214,11 +9228,8 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-#new-menu .dropdown-header {
-  font-size: 10px;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 0 0 3px;
-  margin: -3px 20px 0;
+[dir="rtl"] #new-menu {
+  text-align: right;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -9265,6 +9276,9 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
+}
 .delete-button {
   display: none;
 }
@@ -9272,12 +9286,6 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
-  display: none;
-}
-.move-button {
-  display: none;
-}
-.download-button {
   display: none;
 }
 .shutdown-button {
@@ -9414,116 +9422,7 @@ ul#new-menu {
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI escape sequences */
-/* The color values are a mix of
-   http://www.xcolors.net/dl/baskerville-ivorylight and
-   http://www.xcolors.net/dl/euphrasia */
-.ansi-black-fg {
-  color: #3E424D;
-}
-.ansi-black-bg {
-  background-color: #3E424D;
-}
-.ansi-black-intense-fg {
-  color: #282C36;
-}
-.ansi-black-intense-bg {
-  background-color: #282C36;
-}
-.ansi-red-fg {
-  color: #E75C58;
-}
-.ansi-red-bg {
-  background-color: #E75C58;
-}
-.ansi-red-intense-fg {
-  color: #B22B31;
-}
-.ansi-red-intense-bg {
-  background-color: #B22B31;
-}
-.ansi-green-fg {
-  color: #00A250;
-}
-.ansi-green-bg {
-  background-color: #00A250;
-}
-.ansi-green-intense-fg {
-  color: #007427;
-}
-.ansi-green-intense-bg {
-  background-color: #007427;
-}
-.ansi-yellow-fg {
-  color: #DDB62B;
-}
-.ansi-yellow-bg {
-  background-color: #DDB62B;
-}
-.ansi-yellow-intense-fg {
-  color: #B27D12;
-}
-.ansi-yellow-intense-bg {
-  background-color: #B27D12;
-}
-.ansi-blue-fg {
-  color: #208FFB;
-}
-.ansi-blue-bg {
-  background-color: #208FFB;
-}
-.ansi-blue-intense-fg {
-  color: #0065CA;
-}
-.ansi-blue-intense-bg {
-  background-color: #0065CA;
-}
-.ansi-magenta-fg {
-  color: #D160C4;
-}
-.ansi-magenta-bg {
-  background-color: #D160C4;
-}
-.ansi-magenta-intense-fg {
-  color: #A03196;
-}
-.ansi-magenta-intense-bg {
-  background-color: #A03196;
-}
-.ansi-cyan-fg {
-  color: #60C6C8;
-}
-.ansi-cyan-bg {
-  background-color: #60C6C8;
-}
-.ansi-cyan-intense-fg {
-  color: #258F8F;
-}
-.ansi-cyan-intense-bg {
-  background-color: #258F8F;
-}
-.ansi-white-fg {
-  color: #C5C1B4;
-}
-.ansi-white-bg {
-  background-color: #C5C1B4;
-}
-.ansi-white-intense-fg {
-  color: #A1A6B2;
-}
-.ansi-white-intense-bg {
-  background-color: #A1A6B2;
-}
-.ansi-bold {
-  font-weight: bold;
-}
-.ansi-underline {
-  text-decoration: underline;
-}
-.ansi-inverse {
-  outline: 0.5px dotted;
-}
-/* The following styles are deprecated an will be removed in a future version */
+/* CSS font colors for translated ANSI colors. */
 .ansibold {
   font-weight: bold;
 }
@@ -9604,20 +9503,12 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  position: relative;
-  overflow: visible;
-}
-div.cell:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: transparent;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
 }
 div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -9630,39 +9521,27 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected,
-div.cell.selected.jupyter-soft-selected {
+div.cell.selected {
   border-color: #ababab;
-}
-div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #42A5F5;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
 }
 @media print {
-  div.cell.selected,
-  div.cell.selected.jupyter-soft-selected {
+  div.cell.selected {
     border-color: transparent;
   }
 }
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-}
-.edit_mode div.cell.selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -10126,9 +10005,6 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
-div.output_area .mglyph > img {
-  max-width: none;
-}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -10327,33 +10203,39 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
-.rendered_html ul:not(.list-inline),
-.rendered_html ol:not(.list-inline) {
-  padding-left: 2em;
-}
 .rendered_html ul {
   list-style: disc;
+  margin: 0em 2em;
+  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
+  margin: 0em 2em;
 }
 .rendered_html ul ul ul {
   list-style: circle;
+  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
+  margin: 0em 2em;
+  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
+  margin: 0em 2em;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
+  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
+  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
+  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -10382,36 +10264,24 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: none;
+  border: 1px solid black;
   border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  text-align: right;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 1em 2em;
+}
+.rendered_html td,
+.rendered_html th {
+  text-align: left;
   vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
+  padding: 4px;
 }
 .rendered_html th {
   font-weight: bold;
-}
-.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -10438,12 +10308,6 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
-}
-.rendered_html .alert {
-  margin-bottom: initial;
-}
-.rendered_html * + .alert {
-  margin-top: 1em;
 }
 div.text_cell {
   /* Old browsers */
@@ -10498,17 +10362,8 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
-.text_cell.rendered .rendered_html tr,
-.text_cell.rendered .rendered_html th,
-.text_cell.rendered .rendered_html td {
-  max-width: none;
-}
 .text_cell.unrendered .text_cell_render {
   display: none;
-}
-.text_cell .dropzone .input_area {
-  border: 2px dashed #bababa;
-  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -10645,28 +10500,6 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-.jupyter-keybindings {
-  padding: 1px;
-  line-height: 24px;
-  border-bottom: 1px solid gray;
-}
-.jupyter-keybindings input {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-.jupyter-keybindings i {
-  padding: 6px;
-}
-.well code {
-  background-color: #ffffff;
-  border-color: #ababab;
-  border-width: 1px;
-  border-style: solid;
-  padding: 2px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -10799,151 +10632,6 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
-.tags_button_container {
-  width: 100%;
-  display: flex;
-}
-.tag-container {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  overflow: hidden;
-  position: relative;
-}
-.tag-container > * {
-  margin: 0 4px;
-}
-.remove-tag-btn {
-  margin-left: 4px;
-}
-.tags-input {
-  display: flex;
-}
-.cell-tag:last-child:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  width: 40px;
-  height: 100%;
-  /* Fade to background color of cell toolbar */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
-}
-.tags-input > * {
-  margin-left: 4px;
-}
-.cell-tag,
-.tags-input input,
-.tags-input button {
-  display: block;
-  width: 100%;
-  height: 32px;
-  padding: 6px 12px;
-  font-size: 13px;
-  line-height: 1.42857143;
-  color: #555555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  height: 30px;
-  padding: 5px 10px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 1px;
-  box-shadow: none;
-  width: inherit;
-  font-size: inherit;
-  height: 22px;
-  line-height: 22px;
-  padding: 0px 4px;
-  display: inline-block;
-}
-.cell-tag:focus,
-.tags-input input:focus,
-.tags-input button:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-.cell-tag::-moz-placeholder,
-.tags-input input::-moz-placeholder,
-.tags-input button::-moz-placeholder {
-  color: #999;
-  opacity: 1;
-}
-.cell-tag:-ms-input-placeholder,
-.tags-input input:-ms-input-placeholder,
-.tags-input button:-ms-input-placeholder {
-  color: #999;
-}
-.cell-tag::-webkit-input-placeholder,
-.tags-input input::-webkit-input-placeholder,
-.tags-input button::-webkit-input-placeholder {
-  color: #999;
-}
-.cell-tag::-ms-expand,
-.tags-input input::-ms-expand,
-.tags-input button::-ms-expand {
-  border: 0;
-  background-color: transparent;
-}
-.cell-tag[disabled],
-.tags-input input[disabled],
-.tags-input button[disabled],
-.cell-tag[readonly],
-.tags-input input[readonly],
-.tags-input button[readonly],
-fieldset[disabled] .cell-tag,
-fieldset[disabled] .tags-input input,
-fieldset[disabled] .tags-input button {
-  background-color: #eeeeee;
-  opacity: 1;
-}
-.cell-tag[disabled],
-.tags-input input[disabled],
-.tags-input button[disabled],
-fieldset[disabled] .cell-tag,
-fieldset[disabled] .tags-input input,
-fieldset[disabled] .tags-input button {
-  cursor: not-allowed;
-}
-textarea.cell-tag,
-textarea.tags-input input,
-textarea.tags-input button {
-  height: auto;
-}
-select.cell-tag,
-select.tags-input input,
-select.tags-input button {
-  height: 30px;
-  line-height: 30px;
-}
-textarea.cell-tag,
-textarea.tags-input input,
-textarea.tags-input button,
-select[multiple].cell-tag,
-select[multiple].tags-input input,
-select[multiple].tags-input button {
-  height: auto;
-}
-.cell-tag,
-.tags-input button {
-  padding: 0px 4px;
-}
-.cell-tag {
-  background-color: #fff;
-}
-.tags-input input[type=text]:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: #ccc;
-}
 .completions {
   position: absolute;
   z-index: 110;
@@ -10979,18 +10667,6 @@ select[multiple].tags-input button {
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
-}
-.modal .modal-body .move-path {
-  display: flex;
-  flex-direction: row;
-  justify-content: space;
-  align-items: center;
-}
-.modal .modal-body .move-path .server-root {
-  padding-right: 20px;
-}
-.modal .modal-body .move-path .path-input {
-  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -11855,11 +11531,10 @@ ul.typeahead-list > li > a {
   outline: none;
 }
 .no-shortcut {
-  min-width: 20px;
-  color: transparent;
+  display: none;
 }
 .command-shortcut:before {
-  content: "(command mode)";
+  content: "(command)";
   padding-right: 3px;
   color: #777777;
 }
@@ -11875,12 +11550,6 @@ ul.typeahead-list > li > a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
-}
-[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
-  border-left: none;
-}
-[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
-  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -11934,3 +11603,1122 @@ ul.typeahead-list > li > a {
   margin-top: 20px;
 }
 /*# sourceMappingURL=style.min.css.map */
+    </style>
+<style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="custom.css">
+
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Pauzinhos-Japoneses!">Pauzinhos Japoneses!<a class="anchor-link" href="#Pauzinhos-Japoneses!">&#182;</a></h1><p>Alguns pesquisadores decidiram investigar o comprimento ótimo de palitinhos para crianças e adultos. Eles inventaram uma medida de quão efetivo um par de pauzinhos é chamado "Desempenho de Pinçar Comida". Esta medida é determinada pelo número de amendoins pinçados e colocados dentro de um copo (PPPC).</p>
+<h3 id="Uma-investiga&#231;&#227;o-para-determinar-o-comprimento-&#243;timo-de-palitinhos.">Uma investiga&#231;&#227;o para determinar o comprimento &#243;timo de palitinhos.<a class="anchor-link" href="#Uma-investiga&#231;&#227;o-para-determinar-o-comprimento-&#243;timo-de-palitinhos.">&#182;</a></h3><p><a href="http://www.ncbi.nlm.nih.gov/pubmed/15676839">Link para o Resumo e o Artigo (em inglês)</a><br>
+<em>o resumo abaixo foi adaptado do link</em></p>
+<p>Os palitinhos são uma das ferramentas manuais mais simples e populares desenvolvidos pelo ser humano, mas que não tinham sido investigados anteriormente por <a href="https://www.google.com/search?q=ergonomists">ergonomistas</a>. Dois estudos em laboratório foram conduzidos nessa pesquisa, utilizando um <a href="http://dawg.utk.edu/glossary/whatis_rcbd.htm">projeto de bloco completo randomizado</a> para avaliar os efeitos do comprimento dos palitinhos no desempenho de servir comida de adultos e crianças. Trinta e um calouros universitários, do sexo masculino, e 21 crianças dos primeiros anos do ensino fundamental serviram como participantes do experimento para testar o comprimento de palitinhos dos tamanhos 180, 210, 240, 270, 300 e 330 mm. O resultado mostrou que o desempenho de pinçar comida foi significativamente afetado pelo comprimento dos palitinhos, e os palitinhos de 240 e 180 mm foram ótimos para adultos e crianças, respectivamente. Baseado nesses achados, os pesquisadores sugerem que as famílias com crianças providenciassem ambos palitinhos de 240 e 180 mm. Além disso, restaurantes poderiam providenciar palitinhos de 240 e 180 mm, considerando o trade-off entre ergonomia e custo.</p>
+<h3 id="Para-o-resto-deste-projeto,-responda-todas-as-perguntas-baseando-se-somente-na-an&#225;lise-do-experimento-com-os-trinta-um-alunos-calouros-universit&#225;rios.">Para o resto deste projeto, responda todas as perguntas baseando-se somente na an&#225;lise do experimento com os trinta um alunos calouros universit&#225;rios.<a class="anchor-link" href="#Para-o-resto-deste-projeto,-responda-todas-as-perguntas-baseando-se-somente-na-an&#225;lise-do-experimento-com-os-trinta-um-alunos-calouros-universit&#225;rios.">&#182;</a></h3><p>Faça o download do <a href="https://www.udacity.com/api/nodes/4576183932/supplemental_media/chopstick-effectivenesscsv/download">conjunto de dados dos adultos</a>, depois responda as seguintes questões baseadas no resumo e no conjunto de dados.</p>
+<p><strong>Se você der um duplo clique nesta célula</strong>, você verá que o texto mudou e que toda a formatação foi removida. Isso permite que você edite esse bloco de texto. Esse bloco de texto foi escrito utilizando <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>, que é uma maneira de formatar o texto utilizando cabeçalhos, links, itálicos e outra opções. Você aprenderá mais sobre o Markdown posteriormente no Programa Nanodegree. Para mostrar o texto formatado pressione shift + enter ou shift + return.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="1.-Qual-&#233;-a-vari&#225;vel-independente-nesse-experimento?">1. Qual &#233; a vari&#225;vel independente nesse experimento?<a class="anchor-link" href="#1.-Qual-&#233;-a-vari&#225;vel-independente-nesse-experimento?">&#182;</a></h4><p>O tamanho dos palitos.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="2.-Qual-&#233;-a-vari&#225;vel-dependente-do-experimento">2. Qual &#233; a vari&#225;vel dependente do experimento<a class="anchor-link" href="#2.-Qual-&#233;-a-vari&#225;vel-dependente-do-experimento">&#182;</a></h4><p>A Eficiencia em pinçar comida</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="3.-Como-a-vari&#225;vel-dependente-&#233;-operacionalmente-definida?">3. Como a vari&#225;vel dependente &#233; operacionalmente definida?<a class="anchor-link" href="#3.-Como-a-vari&#225;vel-dependente-&#233;-operacionalmente-definida?">&#182;</a></h4><p>É definida de forma que a analisada seja objetiva e clara, no caso, os palitos são feitos para pinçar coisas, logo a variavel dependente operacional foi a eficiencia de acordo com o tamanho dos palitos (variavel independente).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="4.-Baseado-na-descri&#231;&#227;o-do-experimento-e-no-conjunto-de-dados,-cite-duas-vari&#225;veis-que-voc&#234;-sabe-que-eram-controladas.">4. Baseado na descri&#231;&#227;o do experimento e no conjunto de dados, cite duas vari&#225;veis que voc&#234; sabe que eram controladas.<a class="anchor-link" href="#4.-Baseado-na-descri&#231;&#227;o-do-experimento-e-no-conjunto-de-dados,-cite-duas-vari&#225;veis-que-voc&#234;-sabe-que-eram-controladas.">&#182;</a></h4><p>O tipo de alimento que estava sendo pinçado.
+O local onde o alimento estava.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Uma das grandes vantagens de utilizar o iPython Notebook é que você pode documentar sua análise de dados utilizando código, adicionando comentários ao código, ou até mesmo adicionando blocos de texto utilizando o Markdown. Esses Notebooks permitem que você colabore com outras pessoas e compartilhe seu trabalho. Por enquanto, vamos ver alguns códigos que geram estatísticas.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="c1"># pandas é uma biblioteca para manipulação e anáise de dados</span>
+<span class="c1"># geralmente usamos nomes mais curtos para as bibliotecas.Pabdas é geralmente abreviada para pd</span>
+<span class="c1"># tecle shift + enter para rodar esta célula ou bloco de código</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;~/Downloads/chopstick-effectiveness.csv&#39;</span>
+<span class="c1"># Mude o caminho para o local onde o arquivo chopstick-effectiveness.csv foi baixado em seu computador</span>
+<span class="c1"># se você receber um erro quando estiver rodando este bloco de código, certifique-se que o arquivo chopstick-effectiveness.csv </span>
+<span class="c1"># está localizado no diretório acima.</span>
+<span class="n">dataFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="n">dataFrame</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Food.Pinching.Efficiency</th>
+      <th>Individual</th>
+      <th>Chopstick.Length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>19.55</td>
+      <td>1</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>27.24</td>
+      <td>2</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>28.76</td>
+      <td>3</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>31.19</td>
+      <td>4</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>21.91</td>
+      <td>5</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>27.62</td>
+      <td>6</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>29.46</td>
+      <td>7</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>26.35</td>
+      <td>8</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>26.69</td>
+      <td>9</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>30.22</td>
+      <td>10</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>27.81</td>
+      <td>11</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>23.46</td>
+      <td>12</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>23.64</td>
+      <td>13</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>27.85</td>
+      <td>14</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>20.62</td>
+      <td>15</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>25.35</td>
+      <td>16</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>28.00</td>
+      <td>17</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>23.49</td>
+      <td>18</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>27.77</td>
+      <td>19</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>18.48</td>
+      <td>20</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>23.01</td>
+      <td>21</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22.66</td>
+      <td>22</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23.24</td>
+      <td>23</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>22.82</td>
+      <td>24</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>17.94</td>
+      <td>25</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26.67</td>
+      <td>26</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>28.98</td>
+      <td>27</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>21.48</td>
+      <td>28</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>14.47</td>
+      <td>29</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>28.29</td>
+      <td>30</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>26.18</td>
+      <td>2</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>25.93</td>
+      <td>3</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>28.61</td>
+      <td>4</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>20.54</td>
+      <td>5</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>26.44</td>
+      <td>6</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>29.36</td>
+      <td>7</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>19.77</td>
+      <td>8</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>31.69</td>
+      <td>9</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>24.64</td>
+      <td>10</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>22.09</td>
+      <td>11</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>23.42</td>
+      <td>12</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>28.63</td>
+      <td>13</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>26.30</td>
+      <td>14</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>22.89</td>
+      <td>15</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>22.68</td>
+      <td>16</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>30.92</td>
+      <td>17</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>20.74</td>
+      <td>18</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>27.24</td>
+      <td>19</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>17.12</td>
+      <td>20</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>23.63</td>
+      <td>21</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>20.91</td>
+      <td>22</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>23.49</td>
+      <td>23</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>24.86</td>
+      <td>24</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>16.28</td>
+      <td>25</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>21.52</td>
+      <td>26</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>27.22</td>
+      <td>27</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>17.41</td>
+      <td>28</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>16.42</td>
+      <td>29</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>28.22</td>
+      <td>30</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>27.52</td>
+      <td>31</td>
+      <td>330</td>
+    </tr>
+  </tbody>
+</table>
+<p>186 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Vamos fazer um cálculo de estatística básico com os dados utilizando código! Execute o bloco de código abaixo para calcular a média da "Eficiência de Pinçar Comida" para os 31 participantes e todos os comprimentos de palitinhos.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">dataFrame</span><span class="p">[</span><span class="s1">&#39;Food.Pinching.Efficiency&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>25.00559139784947</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Esse número é útil, mas esse número não nos dá ciência de qual dos comprimentos de palitinhos tiveram o melhor desempenho para trinta calouros universitários, do sexo masculino. Vamos separar os dados pelo tamanho dos palitinhos. O próximo bloco de código vai gerar a média da "Eficiência de Pinçar Comida" para cada comprimento de palitinhos. Execute o bloco de código abaixo.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">meansByChopstickLength</span> <span class="o">=</span> <span class="n">dataFrame</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Chopstick.Length&#39;</span><span class="p">)[</span><span class="s1">&#39;Food.Pinching.Efficiency&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">meansByChopstickLength</span>
+
+<span class="c1"># reset_index() muda o Chopstick.Length de um índice para uma coluna</span>
+<span class="c1"># Em vez do índice ser o comprimento dos palitinhos, o índice serão os números em linha 0, 1, 2, 3, 4, 5.</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Chopstick.Length</th>
+      <th>Food.Pinching.Efficiency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>180</td>
+      <td>24.935161</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>210</td>
+      <td>25.483871</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>240</td>
+      <td>26.322903</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>270</td>
+      <td>24.323871</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>300</td>
+      <td>24.968065</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>330</td>
+      <td>23.999677</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="5.-Qual-comprimento-dos-palitinhos-&#233;-o-melhor-para-o-grupo-de-trinta-e-um-estudantes-calouros-universit&#225;rios,-do-sexo-masculino?">5. Qual comprimento dos palitinhos &#233; o melhor para o grupo de trinta e um estudantes calouros universit&#225;rios, do sexo masculino?<a class="anchor-link" href="#5.-Qual-comprimento-dos-palitinhos-&#233;-o-melhor-para-o-grupo-de-trinta-e-um-estudantes-calouros-universit&#225;rios,-do-sexo-masculino?">&#182;</a></h4><p>de acorco com os dados os comprimento de 240mm.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Faz gráficos aparecerem dentro do Notebook em vez de em uma nova janela</span>
+<span class="o">%</span><span class="k">pylab</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">meansByChopstickLength</span><span class="p">[</span><span class="s1">&#39;Chopstick.Length&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">meansByChopstickLength</span><span class="p">[</span><span class="s1">&#39;Food.Pinching.Efficiency&#39;</span><span class="p">])</span>
+            <span class="c1"># title=&quot;&quot;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Length in mm&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Efficiency in PPPC&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Average Food Pinching Efficiency by Chopstick Length&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Populating the interactive namespace from numpy and matplotlib
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAEWCAYAAAB1xKBvAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xu8HWV97/HPlyTIhgQDJlwSgkHUKFogEFALeEExkKMS
+6UUEEU5VWlooKIZDkKNobUWjoLa0FsECClIsIQWlBjhclB4FcgFCEnJEDCR7BwhoIMAWc/mdP55n
+hcliXWYne+21svf3/Xqt156ZZy6/mTWzfvt5nlmzFBGYmZk1s127AzAzs22DE4aZmZXihGFmZqU4
+YZiZWSlOGGZmVooThpmZleKEYXVJereklVu47GJJ797K7Z8i6e4G5f8l6eSt2caWkLS7pJ9JWivp
+G0r+TdLvJN0r6QhJy0qs50RJtwxEzGVIukDSDwbbtprEUeo8lRSSXj8AIfULSRNzzMP7c71DJmFI
+ujNf0K9qdyz9Ie/P7yU9X3i9Y4BjCEkv5G13S7pI0jCAiHhLRNzZyu1HxDERcWV/rzcnyo1Vx7Z4
+fE8FngZ2joizgcOBo4C9IuLQiPh5REwqEf/VEfH+/o6/U0g6QdK8fOxW5QR/eBvjuULSl4vT+vs8
+bdUHdYntLpf0vlZvZ0gkDEkTgSOAAD7Uom0M6AmSnR4RIwuvX7QhhgMiYiTwXuAE4FNtiKEVeqqO
+bfH4vhZYEi9/6/W1wPKIeKE9oXYeSZ8Bvgn8A7A7sDdwCS26/mxgDImEAXwc+CVwBbCpCUPS2yQ9
+UfmvOE/7sKQH8/B2ks6V9GtJz0i6TtKuuazyn8QnJD0O3J6n/yiv89ncbPGWwrpfI+kmSc9Juk/S
+l4tNLpLeJOlWSb+VtEzSn2/Jzkr647z+Z/PfPy6UjZN0Y97GI5I+VSjryv+F/U7SEuCQstuMiIeB
+nwNvzeva9B9Pbn64TtJVuRlnsaQphe1OkDRb0up8nP+pan++nmP6jaRjCtPvlPTJPHyKpLsbzLuP
+Xm5Guk3SJVvSJCLpCtI5dE7+z/kvgcuAd+TxL6qqKa/e/qmqya3R+5/fl0sk/STvwz2S9i2Uv6Ww
+7JOSzpO0h6QXJb2mMN9BOY4RdXZxB0n/nrexQNIBebkZkq6vOhbflvStGsfo1cCXgL+JiNkR8UJE
+rIuIH0fEOYVZt29wTrw5v79rctmHCmVXSPpO3t+1ku6S9NpcJkkXS3oqX2eLJL1V0qnAiYX37aY8
+f/E8HZaP26/zeudLmlBj/w6XtEJ9bHJVuc+TkyU9LulpSZ8rLNsl6cp8bi+VdE7lHJP0fVJCvinv
+W/EYn1hrfVssIgb9C3gE+GvgYGAdsHuh7NfAUYXxHwHn5uEzSYlmL+BVwL8CP8xlE0k1lquAnYCu
+PP0vgFF5/m8C9xfWfW1+7QjsB6wA7s5lO+Xx/wkMByaTmj32q7NPdwKfrDF9V+B3wEl5PR/N46/J
+5T8D/hnYATgQWA0cmcsuJH3o7wpMAB4CVjY4rgG8Pg/vBzwBfCKPLwfel4cvAH4PTAOGAV8BfpnL
+hgEPABfnY7ADcHguOyW/X5/K850G9ACqPgYl5v0F8HVge1IT0nPAD+rs17ub7PcVwJcL46dU3sfq
+5UvsX6n3P2/zGeDQXH41cG0uGwWsAs7O6x8FvC2X3QycVojtYuAf6+zXBfkY/ikwAvgs8Js8vCfw
+AjA6zzsceAo4uMZ6jgbWA8MbHMNG58QI0jV7Xn6/jgTWApMKx2It8E7SdfatwnGcCswHRgMC3gzs
+Wet9q3GezgAWAZPysgfw8nUTwOvzvq0ADq2zXxPzvK/Yd8p9nnwX6Mrbfgl4c+HavAvYJS//IIVz
+tLgfZda3xZ+lW7PwtvAifTisA8bk8YeBTxfKvwx8r3DhvQC8No8vBd5bmHfPvK7hhTfkdQ22PTrP
+8+p8UayrnPSFbVdO9I8AP69a/l+BL9RZ953Ai8Ca/FqQp58E3Fs17y9IH04TgA3AqELZV4Ar8vCj
+wNGFslNpnjCeIyWkX+f92a76BCZ9ONxWWG4/oDcPv4OUtGpdYKcAjxTGd8zb3KNwDD7ZbF7Sf1/r
+gR0L5T+gccLYWDi2lddOufwKyieMZvtX6v3P27ysUDYNeDgPfxRYWGdfPgL8dx4eRkrq9T7sLiB/
+aOfx7UiJ6Ig8/l/Ap/LwB0jNcrXWcyLwRJPrstE5cUSOc7tC+Q+BCwrH4tpC2UjSeT2BlFz+H/D2
+4vK13rca5+ky4NgG5/pM4DHgrQ32ayL1E0aZz5O9CuX3AscXrs2phbJPUi5h1Fzflr6GQpPUycAt
+EfF0Hr+GQrNUHj9OqTP8ONIH72O57LXADblavIb0hm8gtclWrKgM5CrthbnK+RzpTQQYA4wlnRgr
+ai2bt/W2yrby9k4kfeDV87cRMTq/DsrTxpFO6qLHgPG57LcRsbZGWWXZFVVlzRwUEbtExL4RcX5E
+bKwz3xOF4RdJTR/DSRf5YxGxvtlyEfFiHhzZx3kr+/1iYd7iftbSUzi2ldeW9FE027+KMu9/9TGs
+HIcJpIRdy38C+0nah9Qx/2xE3Nsgjk3HJb+XK0nHD+BK4GN5+GPA9+us4xlgjJr369U7J8YBK6rO
+peJ5Wh3n88BvgXERcTvwT6T+kqckXSpp5yZxVDQ6jgBnAddFxEMl11etzOdJvfe4+tpsdv42W98W
+GdQJQ1IX8OfAu5T6FZ4APg0cUGmbjYglpJPxGFKn7TWFVawAjqn60NghIroL80Rh+ATgWOB9pFrF
+xEoopP8y15OqkxXF9tEVwF1V2xoZEaf1cbd7SCdm0d5Ady7bVdKoGmWQ/pucUFXWaiuAvUt8uGyN
+VaT93rEw7RVt0y1Sdv+25v1fAbyuVkFE/B64jvQBfxL1P+QrNh0XSduRzteePGkOsL+kt5JqGFfX
+WccvSM0f00vEXksPMCFvv6J4nlbHOZLUjNoDEBHfjoiDSbWWN5KammDza7WWFcC+Dcr/DJgu6cwy
+O1Fn/c0+T+pZRf3PDmi+b/1iUCcM0gm7gXTiHJhfbya103+8MN81pPbFd5L6MCq+A/x9oUNtrKRj
+G2xvFOlCeYbUJPIPlYKI2ADMBi6QtKOkN1XF8GPgjZJOkjQivw6R9OY+7vPNeT0nSBou6SN5/38c
+ESuA/wt8RdIOkvYHPkFqnoH0wTJT0i6S9gLO6OO2t8S9pIvhQkk75bgO688N5BrjPNKx317p9tgP
+9uc2Gii7f1vz/v8Y2FPSWZJeJWmUpLcVyq8iNX99iOYJ42BJx+UEdxbpfP4lbEo+/0G6Xu6NiMdr
+rSAingU+D1wiaXo+30dIOkbS10rszz2k/4bPycu9m/R+XVuYZ1rufN4e+DtSU9qKfMzeptSp/wKp
+n6RSU3mSOok1uwz4O0lvULK/CjcMkBLSe4EzJTVL5K/K73XltR19/zwpKl6b44HTq8qb7Vu/GOwJ
+42Tg3yLi8Yh4ovIiVVlPLPzX90PgXcDthaYrSJ1pNwK3SFpLunCKF2K1q0i1lW5gSZ6/6HRSzeMJ
+0oX7Q9IFSW4mej9wPOnEfAL4KqlzrLSIeIb039/ZpMR1DvCBwn59lFTz6QFuILWR35bLvpjj/w1w
+C80/XLZaTqQfJHUoPk5qAvlICzZ1Iqk/4RlSX8u/k499HeP0yu9h/ElfN1p2/7bm/c/LHpW38wTw
+K+A9hfL/Jn1oFptb6/nPHF/lxonjImJdofxK4I9ocm5ExDeAzwDnk2rXK0jn/5wS+/OHvC/HkDr+
+/xn4eKQ78SquAb5Aaoo6mJebynYmdfT+jnQuPwPMymWXk5rn1kiqFcdFpA/mW0h9c5eTOoyLsT1O
+ShrnKt+hV8fzQG/hdSR9/zwp+hLp3PkNcBspcRfP368A5+d9+2zJdfZZ5Q4SawNJXyV14J7cdGbr
+V5L+ndRp/IV2xzIQJN0OXBMRl23levYm3TiyR0Q81y/B9T2GK0gdvue3Y/udINdwjo+Idw3kdgd7
+DaOjKN1nv3+u7h5Kag66od1xDQW5qWJfpXvhjyb1NTX9b3cwkHQIcBCpVrU169mOVGu4tl3JYqiS
+tKekw/L5O4nUgjDgnx3t+HbyUDaK1Aw1jtTm+A1SE4C13h6kPqTXkKr2p0XEwvaG1HqSriT15Z1Z
+dXdcX9ezE+mcfYz0XQQbWNuTbrPeh3SL97WkproB5SYpMzMrxU1SZmZWyqBqkhozZkxMnDix3WGY
+mW0z5s+f/3REjC0z76BKGBMnTmTevHntDsPMbJshqcwTHQA3SZmZWUlOGGZmVooThpmZleKEYWZm
+pThhmJlZKU4YZmZWyqC6rdasnjkLu5k1dxk9a3oZN7qLGVMnMX3y+OYLmtkmThg26M1Z2M3M2Yvo
+XbcBgO41vcycvQjAScOsD9wkZYPerLnLNiWLit51G5g1d1mbIjLbNjlh2KDXs6a3T9PNrDYnDBv0
+xo3u6tN0M6vNCcMGvRlTJ9E1Ythm07pGDGPG1Eltishs2+RObxv0Kh3bvkvKbOs4YdiQMH3yeCcI
+s63kJikzMyvFCcPMzEpxwjAzs1KcMMzMrBQnDDMzK8UJw8zMSnHCMDOzUpwwzMysFCcMMzMrxQnD
+zMxKccIwM7NSnDDMzKwUJwwzMyvFCcPMzEpxwjAzs1KcMMzMrBQnDDMzK8UJw8zMSnHCMDOzUlqW
+MCRNkHSHpCWSFks6s1B2hqSH8/Sv1Vn+aEnLJD0i6dxWxWlmZuUMb+G61wNnR8QCSaOA+ZJuBXYH
+jgUOiIiXJO1WvaCkYcAlwFHASuA+STdGxJIWxmtmZg20rIYREasiYkEeXgssBcYDpwEXRsRLueyp
+GosfCjwSEY9GxB+Aa0lJxszM2mRA+jAkTQQmA/cAbwSOkHSPpLskHVJjkfHAisL4yjzNzMzapJVN
+UgBIGglcD5wVEc9JGg7sCrwdOAS4TtLrIiK2cP2nAqcC7L333v0UtZmZVWtpDUPSCFKyuDoiZufJ
+K4HZkdwLbATGVC3aDUwojO+Vp71CRFwaEVMiYsrYsWP7dwfMzGyTVt4lJeByYGlEXFQomgO8J8/z
+RmB74Omqxe8D3iBpH0nbA8cDN7YqVjMza66VNYzDgJOAIyXdn1/TgO8Br5P0EKkz++SICEnjJN0M
+EBHrgdOBuaTO8usiYnELYzUzsyZa1ocREXcDqlP8sRrz9wDTCuM3Aze3JjozM+srf9PbzMxKccIw
+M7NSnDDMzKwUJwwzMyvFCcPMzEpxwjAzs1KcMMzMrBQnDDMzK8UJw8zMSnHCMDOzUpwwzMysFCcM
+MzMrxQnDzMxKccIwM7NSnDDMzKwUJwwzMyvFCcPMzEpxwjAzs1KcMMzMrBQnDDMzK8UJw8zMSnHC
+MDOzUuomDEmHSDqmxvRpkg5ubVhmZtZpGtUwvgosqTF9MTCrNeGYmVmnapQwRkXEY9UT87QxrQvJ
+zMw6UaOEsUuDsh37OxAzM+tsjRLGbZL+XpIqE5R8Cbi99aGZmVknGd6g7GzgcuARSffnaQcA84BP
+tjowMzPrLHUTRkS8ABwv6XXAW/LkxRHx6IBEZmZmHaVuwpC0G3Ae8HpgEfCViHhuoAIzM7PO0qgP
+4yrgBeAfgZHAtwckIjMz60iN+jD2jIjP5eG5khYMREBmZtaZGiUMJO0CVO6SGlYcj4jftjg2MzPr
+II0SxquB6lpFZTyA1zVasaQJpGat3fP8l0bEtyRdAHwKWJ1nPS8ibq6x/HJgLbABWB8RUxruiZmZ
+tVSju6QmbuW61wNnR8QCSaOA+ZJuzWUXR8TXS6zjPRHx9FbGYWZm/aDsXVIPAhf25S6piFgFrMrD
+ayUtBcZvXbjWH+Ys7GbW3GX0rOll3OguZkydxPTJfmvMrLGyd0mNYivukpI0EZgM3JMnnSHpQUnf
+y/0itQTp2+bzJZ26pdu2zc1Z2M3M2YvoXtNLAN1repk5exFzFna3OzQz63CNEsaeEfG5iJgbEWcA
++2/JBiSNBK4Hzso1lH8h9X8cSKqBfKPOoodHxIHAMcDfSHpnnfWfKmmepHmrV6+uNYsVzJq7jN51
+Gzab1rtuA7PmLmtTRGa2rWj4A0qSdpG0q6RdyXdJFcabkjSClCyujojZABHxZERsiIiNwHeBQ2st
+GxHd+e9TwA0N5rs0IqZExJSxY8eWCWtI61nT26fpZmYVrbxLSqRnUS2NiIsK0/fM/RsAHwYeqrHs
+TsB2ue9jJ+D9wJcabc/KGTe6i+4ayWHc6K42RGNm25JW3iV1GHASsKjw8MLzgI9KOpCUdJYDfwkg
+aRxwWURMI92Ke0N+UO5w4JqI+OlWxmPAjKmTmDl70WbNUl0jhjFj6qQ2RmVm24JW3iV1Ny9/6a/o
+Fd+5yPP3ANPy8KOkJ+NaP6vcDeW7pMysrxQRtQuknwLzgZ8BHyD9At8pAxda302ZMiXmzZvX7jDM
+zLYZkuaX/WK0nyVlZmal+FlSZmZWSrO7pOazeT9E6bukzMxscGnlXVJmZjaINPzinpmZWYUThpmZ
+leKEYWZmpTS8S6pC0jDSt683zR8Rj7cqKDMz6zxNE4akM4AvAE8CG/PkYAufXmtmZtumMjWMM4FJ
+EfFMq4MxM7POVaYPYwXwbKsDMTOzzlamhvEocKeknwAvVSYWH1luZmaDX5mE8Xh+bZ9fZmY2BDVN
+GBHxxYEIxMzMOluj38P4ZkScJekm0l1Rm4mID7U0MjMz6yiNahjfz3+/PhCBmJlZZ2v08MH5+e9d
+AxeOmZl1Kj8axMzMSnHCMDOzUpomDEl/NBCBmJlZZytTw/hnSfdK+mtJr255RGZm1pGaJoyIOAI4
+EZgAzJd0jaSjWh6ZmZl1lFJ9GBHxK+B84H8B7wK+LelhSce1MjgzM+scZfow9pd0MbAUOBL4YES8
+OQ9f3OL4zMysQ5R5ltQ/ApcB50VEb2ViRPRIOr9lkZmZWUcpkzD+B9AbERsAJG0H7BARL0bE9xsv
+amZmg0WZPozbgK7C+I55mpmZDSFlEsYOEfF8ZSQP79i6kMzMrBOVSRgvSDqoMiLpYKC3wfxmZjYI
+lenDOAv4kaQeQMAewEdaGpWZmXWcMj+gdJ+kNwGT8qRlEbGutWGZmVmnKVPDADgEmJjnP0gSEXFV
+y6IyM7OOU+aLe98n/YjS4aTEcQgwpcRyEyTdIWmJpMWSzszTL5DULen+/JpWZ/mjJS2T9Iikc/u0
+V2Zm1u/K1DCmAPtFxCt+prWJ9cDZEbFA0ijSc6huzWUXR0TdX/KTNAy4BDgKWAncJ+nGiFjSxxjM
+zKyflLlL6iFSR3efRMSqiFiQh9eSHi0yvuTihwKPRMSjEfEH4Frg2L7GYGZm/adMDWMMsETSvcBL
+lYkR8aGyG5E0EZgM3AMcBpwh6ePAPFIt5HdVi4wHVhTGVwJvK7s9Mxt65izsZtbcZfSs6WXc6C5m
+TJ3E9Mll/0e1MsokjAu2ZgOSRgLXA2dFxHOS/gX4OyDy328Af7EV6z8VOBVg77333ppQzWwbNWdh
+NzNnL6J33QYAutf0MnP2IgAnjX5U5vcw7gKWAyPy8H3AgjIrlzSClCyujojZeX1PRsSGiNgIfJfU
+/FStm/T7GxV75Wm14rs0IqZExJSxY8eWCcvMBplZc5dtShYVves2MGvusjZFNDg1rWFI+hTpP/hd
+gX1JzUXfAd7bZDkBlwNLI+KiwvQ9I2JVHv0wqY+k2n3AGyTtQ0oUxwMnNN2bLeBqrNm2r2dN7YdP
+1JtuW6ZMk9TfkGoB90D6MSVJu5VY7jDgJGCRpPvztPOAj0o6kNQktRz4SwBJ44DLImJaRKyXdDow
+FxgGfC8iFpffrXJcjTUbHMaN7qK7RnIYN7qrxty2pcokjJci4g+pwgCShpM+7BuKiLtJjxKpdnOd
++XuAaYXxm+vN218aVWOdMMy2HTOmTtrsnz+ArhHDmDF1UoOlrK/KJIy7JJ0HdOXf8v5r4KbWhjUw
+XI01Gxwq/+C5ebm1yiSMc4FPAItIzUc3k36Bb5vnaqzZ4DF98ngniBYrc5fUxoj4bkT8WUT8aR7u
+67e+O9KMqZPoGjFss2muxpqZ1Va3hiHpuoj4c0mLqNFnERH7tzSyAeBqrJlZeY2apM7Mfz8wEIG0
+i6uxZmbl1E0Yhe9KbAesiojfA0jqAnYfgNjMzKyDlHn44I+AjYXxDXmamZkNIWUSxvD8xFgA8vD2
+rQvJzMw6UZmEsVrSpifTSjoWeLp1IZmZWScq8z2MvwKulvRPpG9urwA+3tKozMys4zRNGBHxa+Dt
++THlRMTzLY/KzMw6TqPvYXwsIn4g6TNV0wEoPoHWzMwGv0Y1jB3z31EDEYiZmXW2Rglj3/x3SUT4
+NlozsyGu0V1S0/KPIM0cqGDMzKxzNaph/BT4HTBS0nOF6QIiInZuaWRmZtZRGtUwzo+I0cBPImLn
+wmuUk4WZ2dDTKGH8Iv99rsE8ZmY2RDRqktpe0gnAH0s6rrowIma3LiwzM+s0jRLGXwEnAqOBD1aV
+BeCEYWY2hDR6vPndwN2S5kXE5QMYk5mZdaC6fRiSzgGIiMsl/VlV2T+0OjAzM+ssjTq9jy8MV38X
+4+gWxGJmZh2sUcJQneFa42ZmNsg1ShhRZ7jWuJmZDXKN7pI6IH/DW0BX4dveAnZoeWRmZtZRGt0l
+NWwgAzEzs85W5idazczMnDDMzKwcJwwzMyvFCcPMzEpxwjAzs1KcMMzMrBQnDDMzK6VlCUPSBEl3
+SFoiabGkM6vKz5YUksbUWX65pEWS7pc0r1VxmplZOY2+6b211gNnR8QCSaOA+ZJujYglkiYA7wce
+b7KO90TE0y2M0czMSmpZDSMiVkXEgjy8FlgKjM/FFwPn4GdSmZltMwakD0PSRGAycI+kY4HuiHig
+yWIB3CZpvqRTG6z7VEnzJM1bvXp1v8VsZmaba2WTFACSRgLXA2eRmqnOIzVHNXN4RHRL2g24VdLD
+EfGz6pki4lLgUoApU6a4xmJm1iItrWFIGkFKFldHxGxgX2Af4AFJy4G9gAWS9qheNiK689+ngBuA
+Q1sZq5mZNdbKu6QEXA4sjYiLACJiUUTsFhETI2IisBI4KCKeqFp2p9xRjqSdSDWSh1oVq5mZNdfK
+GsZhwEnAkfnW2PslTas3s6Rxkm7Oo7sDd0t6ALgX+ElE/LSFsZqZWRMt68OIiLtp8lOuuZZRGe4B
+puXhR4EDWhWbmZn1nb/pbWZmpThhmJlZKU4YZmZWihOGmZmV4oRhZmaltPyb3mY28OYs7GbW3GX0
+rOll3OguZkydxPTJ45svaNaAE4bZIDNnYTczZy+id90GALrX9DJz9iIAJw3bKm6SMhtkZs1dtilZ
+VPSu28CsucvaFJENFk4YZoNMz5rePk03K8sJw2yQGTe6q0/TzcpywjAbZGZMnUTXiGGbTesaMYwZ
+Uye1KSIbLNzpbTbIVDq2fZeU9TcnDLNBaPrk8U4Q1u/cJGVmZqU4YZiZWSlOGGZmVooThpmZleKE
+YWZmpThhmJlZKU4YZmZWihOGmZmV4oRhZmalOGGYmVkpThhmZlaKE4aZmZXihGFmZqU4YZiZWSlO
+GGZmVooThpmZleKEYWZmpThhmJlZKU4YZmZWihOGmZmV0rKEIWmCpDskLZG0WNKZVeVnSwpJY+os
+f7SkZZIekXRuq+I0M9tWzVnYzWEX3s4+5/6Ewy68nTkLu1u6veEtXPd64OyIWCBpFDBf0q0RsUTS
+BOD9wOO1FpQ0DLgEOApYCdwn6caIWNLCeM3MthlzFnYzc/YietdtAKB7TS8zZy8CYPrk8S3ZZstq
+GBGxKiIW5OG1wFKgshcXA+cAUWfxQ4FHIuLRiPgDcC1wbKtiNTPb1syau2xTsqjoXbeBWXOXtWyb
+A9KHIWkiMBm4R9KxQHdEPNBgkfHAisL4Sl5ONtXrPlXSPEnzVq9e3U8Rm5l1tp41vX2a3h9anjAk
+jQSuB84iNVOdB3y+v9YfEZdGxJSImDJ27Nj+Wq2ZWUcbN7qrT9P7Q0sThqQRpGRxdUTMBvYF9gEe
+kLQc2AtYIGmPqkW7gQmF8b3yNDMzA2ZMnUTXiGGbTesaMYwZUye1bJst6/SWJOByYGlEXAQQEYuA
+3QrzLAemRMTTVYvfB7xB0j6kRHE8cEKrYjUz29ZUOrZnzV1Gz5pexo3uYsbUSS3r8IbW3iV1GHAS
+sEjS/XnaeRFxc62ZJY0DLouIaRGxXtLpwFxgGPC9iFjcwljNzLY50yePb2mCqNayhBERdwNqMs/E
+wnAPMK0wfjNQM7mYmdnA8ze9zcysFCcMMzMrxQnDzMxKccIwM7NSnDDMzKwURdR7nNO2R9Jq4LEt
+XHwMUP19kE7S6fGBY+wPnR4fdH6MnR4fdFaMr42IUo/JGFQJY2tImhcRU9odRz2dHh84xv7Q6fFB
+58fY6fHBthFjLW6SMjOzUpwwzMysFCeMl13a7gCa6PT4wDH2h06PDzo/xk6PD7aNGF/BfRhmZlaK
+axhmZlaKE4aZmZUyJBKGpO9JekrSQ4VpB0r6paT780+8HloomynpEUnLJE0doBgnSLpD0hJJiyWd
+mafvKulWSb/Kf3dpR5wN4psl6WFJD0q6QdLodsTXKMZC+dmSQtKYdsTYKD5JZ+TjuFjS19oRX6MY
+O+V6kbSDpHslPZDj+2Ke3hHXSZMYO+Za2WIRMehfwDuBg4CHCtNuAY7Jw9OAO/PwfsADwKtIvw74
+a2DYAMS4J3BQHh4F/L8cy9eAc/P0c4GvtiPOBvG9Hxiep3+1XfE1ijGPTyD9vspjwJgOO4bvAW4D
+XpXLduu0Y9gp1wvpJxNG5uERwD3A2zvlOmkSY8dcK1v6GhI1jIj4GfDb6snAznn41UBPHj4WuDYi
+XoqI3wCPAIfSYhGxKiIW5OG1wFJgfI7nyjzblcD0dsRZL76IuCUi1ufZfkn6Od0Bj69RjLn4YuAc
+0vte0RHHEDgNuDAiXsplT7UjviYxdsT1EsnzeXREfgUdcp00irGTrpUtNSQSRh1nAbMkrQC+DszM
+08cDKwrzreTlD50BIWkiMJn0n8nuEbEqFz0B7J6H2xZnVXxFfwH8Vx5u63EsxijpWKA7Ih6omq1T
+juEbgSPKDHWbAAAEZElEQVQk3SPpLkmHtDu+GjF2zPUiaZjSr3g+BdwaER13ndSJsahjrpW+GMoJ
+4zTg0xExAfg06ffH207SSOB64KyIeK5YFqn+2tb7oOvFJ+lzwHrg6nbFVohlU4ykmM4DPt/WoApq
+HMPhwK6kZosZwHWSGv5aZavViLFjrpeI2BARB5L+Qz9U0lurytt+nTSKsZOulb4aygnjZGB2Hv4R
+L1cBu0nt3RV75WktJ2kE6SK9OiIqsT0pac9cvifpP5a2xFknPiSdAnwAODFfrG2Jr06M+5LahR+Q
+tDzHsUDSHu2Isc4xXAnMzk0Z9wIbSQ+n65RjCB14vUTEGuAO4Gg66DppEGNHXStbpN2dKAP1Aiay
+eaf3UuDdefi9wPw8/BY274B6lIHp9BZwFfDNqumz2Lwz72vtiLNBfEcDS4CxVdMH/DjWi7FqnuW8
+3OndKcfwr4Av5eE3kpon1EnHsFOuF2AsMDoPdwE/J30Ad8R10iTGjrlWtnjf2h3AgOwk/BBYBawj
+/Tf3CeBwYH5+o+4BDi7M/znSnQrLyHeGDECMh5Oq0Q8C9+fXNOA1wP8BfkW6k2bXdsTZIL5H8gdc
+Zdp32nUc68VYNc9ycsLooGO4PfAD4CFgAXBkpx3DTrlegP2BhTm+h4DP5+kdcZ00ibFjrpUtffnR
+IGZmVspQ7sMwM7M+cMIwM7NSnDDMzKwUJwwzMyvFCcPMzEpxwrBBTdLzzefaqvWfImlcYXx58Wm4
+dZaZIunbrYzLrBWGtzsAs23cKaR77XuazLdJRMwD5rUqILNWcQ3DhhxJYyVdL+m+/DosT79A6bdT
+7pT0qKS/LSzzv/NvFdwt6YeSPivpT4EpwNX5dyK68uxnSFogaZGkN9XY/rsl/bjZNquWeT7/nsJi
+SbdJOrSwzIfyPKdImpN/D2K5pNMlfUbSwvxbFrv286G0IcYJw4aibwEXR8QhwJ8AlxXK3gRMJT0r
+6QuSRuSnx/4JcABwDClJEBH/QaopnBgRB0ZEb17H0xFxEPAvwGdLxPOKbdaYZyfg9oh4C7AW+DJw
+FPBh4EuF+d4KHAccAvw98GJETAZ+AXy8RCxmdblJyoai9wH7FR4Iu3N+OivATyL9LsVLkp4iPSb7
+MOA/I+L3wO8l3dRk/ZWH9M0nfXg3U2ubK6vm+QPw0zy8CHgpItZJWkR6TlrFHZF+x2KtpGeBmwrL
+7F8iFrO6nDBsKNoOeHtOAJvkBPJSYdIGtuwaqayj7PJltrkuXn6Oz8bKMhGxUVJx/uK6NhbGN5aM
+xawuN0nZUHQLcEZlRNKBTeb/b+CD+beaR5KePFqxlvRTpmaDnv/jsMFuR0nF5p2LgL8FLpH0IOka
++BnpEeM1RcR9km4kPX30SVLzzrO5+ArgO5J6gXf0f/hmncNPqzUrQdLIiHhe0o6kBHNq5N++Nhsq
+XMMwK+dSSfsBOwBXOlnYUOQahpmZleJObzMzK8UJw8zMSnHCMDOzUpwwzMysFCcMMzMr5f8D+vKt
+0w/WJH8AAAAASUVORK5CYII=
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="6.-Baseado-no-gr&#225;fico-de-dispers&#227;o-criado-a-partir-do-c&#243;digo-abaixo,-interprete-a-rela&#231;&#227;o-que-voc&#234;-v&#234;.-O-que-voc&#234;-percebe?">6. Baseado no gr&#225;fico de dispers&#227;o criado a partir do c&#243;digo abaixo, interprete a rela&#231;&#227;o que voc&#234; v&#234;. O que voc&#234; percebe?<a class="anchor-link" href="#6.-Baseado-no-gr&#225;fico-de-dispers&#227;o-criado-a-partir-do-c&#243;digo-abaixo,-interprete-a-rela&#231;&#227;o-que-voc&#234;-v&#234;.-O-que-voc&#234;-percebe?">&#182;</a></h4><p>De acordo com o gráfico é possivel concluir quer que existe uma relação entre a eficiencia e o tamanho dos palitos entre 180mm e 240m (chegando ao melhor resultado) posteriormente a eficiencia diminui.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="No-resumo,-os-pesquisadores-estabelecem-que-os-resultados-de-desempenho-de-pin&#231;ar-comida-s&#227;o-significativamente-afetados-pelo-comprimento-dos-palitinhos,-e-que-os-palitinhos-de-240-mm-s&#227;o-&#243;timos-para-adultos.">No resumo, os pesquisadores estabelecem que os resultados de desempenho de pin&#231;ar comida s&#227;o significativamente afetados pelo comprimento dos palitinhos, e que os palitinhos de 240 mm s&#227;o &#243;timos para adultos.<a class="anchor-link" href="#No-resumo,-os-pesquisadores-estabelecem-que-os-resultados-de-desempenho-de-pin&#231;ar-comida-s&#227;o-significativamente-afetados-pelo-comprimento-dos-palitinhos,-e-que-os-palitinhos-de-240-mm-s&#227;o-&#243;timos-para-adultos.">&#182;</a></h3><h4 id="7a.-Baseado-nos-dados-que-voc&#234;-analisou,-voc&#234;-concorda-com-a-afirma&#231;&#227;o?">7a. Baseado nos dados que voc&#234; analisou, voc&#234; concorda com a afirma&#231;&#227;o?<a class="anchor-link" href="#7a.-Baseado-nos-dados-que-voc&#234;-analisou,-voc&#234;-concorda-com-a-afirma&#231;&#227;o?">&#182;</a></h4><p>sim.</p>
+<h4 id="7b.-Por-qu&#234;?">7b. Por qu&#234;?<a class="anchor-link" href="#7b.-Por-qu&#234;?">&#182;</a></h4><p>Podemos verificar pelos dados coletados e graficos apresentados que a relação do tamanho dos palitos com a eficiencia cresce proporcionalmente entre 180mm e 240mm e posteriormente começa a cair. 
+Para um resultado mais preciso a amostragem deveria ser maior (mais participantes) e mais aleatoria, como por exemplo pessoas do sexo feminino. 
+Seria interessante para identificar um possivel padrão (quanto maior após Xmm, pior será a eficiencia) poderiamos utilizar uma analise de mais alguns tamanhos de palitos (340mm, 360mm...).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>
+
+ 
+
+
+</html>
